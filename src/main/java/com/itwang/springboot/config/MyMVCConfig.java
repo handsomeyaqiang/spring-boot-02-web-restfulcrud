@@ -25,12 +25,14 @@ public class MyMVCConfig implements WebMvcConfigurer {
         registry.addViewController("/main.html").setViewName("dashboard");
     }
     //注册拦截器
+
+
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         //静态资源，以前在springMVC里面需要排除掉*.css,*.js等静态资源
         //springboot已经做好了静态资源映射
         registry.addInterceptor(new LoginHandlerInterceptor()).addPathPatterns("/**")
-                .excludePathPatterns("/index.html","/","/user/login");
+                .excludePathPatterns("/index.html","/","/user/login","/**/*.css", "/**/*.js", "/**/*.png", "/**/*.jpg", "/**/*.jpeg");
     }
 
     @Bean

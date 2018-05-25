@@ -10,10 +10,10 @@
 
 		<title>Dashboard Template for Bootstrap</title>
 		<!-- Bootstrap core CSS -->
-		<link href="asserts/css/bootstrap.min.css" rel="stylesheet">
+		<link th:href="asserts/css/bootstrap.min.css" rel="stylesheet">
 
 		<!-- Custom styles for this template -->
-		<link href="asserts/css/dashboard.css" rel="stylesheet">
+		<link th:href="asserts/css/dashboard.css" rel="stylesheet">
 		<style type="text/css">
 			/* Chart.js */
 			
@@ -60,7 +60,7 @@
 							3.创建一个input项，name="_method";值就是我们制定的请求方式
 						-->
 						<input type="hidden" name="_method" value="put"/>
-						<input type="hidden" name="id" value="${emp.id}"/>
+						<input type="hidden" name="id" th:value="${emp.id}"/>
 						<div class="form-group">
 							<label>LastName</label>
 							<input type="text" th:value="${emp.lastName}" name="lastName" class="form-control" placeholder="zhangsan">
